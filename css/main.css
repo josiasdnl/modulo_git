@@ -101,6 +101,13 @@ section h2 {
     margin: 16px;
 }
 
+.back-to-top a img {
+    width: 40px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
 #sports {
     background-color: #ebebeb;
 }
