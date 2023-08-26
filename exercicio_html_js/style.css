@@ -5,47 +5,45 @@
     font-family: sans-serif;
 }
 
-body {
-    background-color:gainsboro;
-    height: 500px;
-}
-
 .container {
     margin: 80px auto;
     max-width: 700px;
     width: 100%;
     padding: 16px;
-    background-color: white;
-    border-radius: 15px;
-    border: 2px solid gray;
 }
 
 form {
     margin-top: 32px;
 }
 
-input {
+.comparacao {
     display: inline-flex;
-    width: 49.6%;
     justify-content: center;
+    width: 100%;
+}
+
+input {
+    width: 50%
 }
 
 button {
     display: block;
     width: 100%;
     border: none;
-    background-color: gold;
+    color: black;
+    background-color: orange;
+    font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: mediumblue;
-    color: white;
+    color: orange;
+    background-color: black;
 }
 
-input, button {
+input, button, .sinal-comparacao {
     padding: 8px;
     margin-top: 8px;
 }

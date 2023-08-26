@@ -13,13 +13,17 @@
         <h1>Maior/Menor</h1>
         <h2>Digite um número qualquer em cada campo abaixo:</h2>
         <form id="formulario-comparacao">
-            <input id="numero-a" type="number" placeholder="Número A" required>
-            <input id="numero-b" type="number" placeholder="Número B" required>
+            <div class="comparacao">
+                <input id="numero-a" type="number" placeholder="Número A" required>
+                <p class="sinal-comparacao"><</p>
+                <input id="numero-b" type="number" placeholder="Número B" required>
+            </div>
             <button id="botao-enviar" type="submit">Enviar</button>
         </form>
     </div>
 
-    <div class=""></div>
+    <p class="validacao-correta"></p>
+    <p class="validacao-incorreta"></p>
 
     <script src="./main.js"></script>
 
