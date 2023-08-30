@@ -43,7 +43,15 @@ button:hover {
     background-color: black;
 }
 
-input, button, .sinal-comparacao {
+input, button, .sinal-comparacao, .validacao-correta, .validacao-incorreta {
     padding: 8px;
     margin-top: 8px;
+}
+
+.validacao-correta {
+    color:  green;
+}
+
+.validacao-incorreta {
+    color:  red;
 }

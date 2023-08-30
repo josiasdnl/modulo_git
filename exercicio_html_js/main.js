@@ -1,22 +1,22 @@
-const form = document.getElementById('formulario-comparacao');
+// Obtém os elementos do DOM
+const numeroA = document.getElementById('numero-a');
+const numeroB = document.getElementById('numero-b');
+const formulario = document.getElementById('formulario-comparacao');
+const validacaoCorreta = document.querySelector('.validacao-correta');
+const validacaoIncorreta = document.querySelector('.validacao-incorreta');
 
-function comparacao()
+// Define a função de validação
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio do formulário
 
-form.addEventListener('submit', function(e) {
-    let comparacao = false
-    e.preventDefault();
+    const valorA = parseFloat(numeroA.value);
+    const valorB = parseFloat(numeroB.value);
 
-    const numeroA = document.getElementById('numero-a');
-    const numeroB = document.getElementById('numero-b');
-    const mensagemSucesso = `A afirmação está correta - ${numeroB.value} é maior que ${numeroA.value}`
-    const mensagemFracasso = `A afirmação não está correta - ${numeroB.value} não é maior que ${numeroA.value}`
-
-    comparacao = (numeroB.value>numeroA.value)
-    if (comparacao) {
-        const validacao = document.getElementsByClassName('.validacao-correta');
-        validacao.innerHTML = mensagemSucesso
-    
+    if (valorB > valorA) {
+        validacaoIncorreta.textContent = '';
+        validacaoCorreta.textContent = 'Afirmação correta: Número B é maior que Número A.';
     } else {
-        validacao.innerHTML = mensagemFracasso
+        validacaoCorreta.textContent = '';
+        validacaoIncorreta.textContent = 'Afirmação incorreta: Número B não é maior que Número A.';
     }
-})
+});
