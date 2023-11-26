@@ -1,18 +1,24 @@
-const novoItem = document.querySelector('#input-novo-item');
-const botaoAdicionar = document.querySelector('#botao-submit');
+$(document).ready(function() {
 
-botaoAdicionar.addEventListener('click', function(e) {
-    e.preventDefault();
+    $('#botao-submit').click(function(e) {
+        e.preventDefault();
 
-    const novoItemTexto = novoItem.value
-    //console.log(novoItemTexto);
+        const novoItemTexto = $('#input-novo-item').val();
 
-    if(novoItemTexto.trim() !== "") {
-        const novaLinha = document.createElement('li');
-        const  listaDeTarefas = document.querySelector('#lista-de-tarefas');
+        if(novoItemTexto.trim() !== "") {
+            const novaLinha = $('<li>').text(novoItemTexto);
 
-        novaLinha.textContent = novoItemTexto;
-        listaDeTarefas.appendChild(novaLinha);
+            novaLinha.click(function() {
+                if (this.style.textDecoration === 'line-through') {
+                    this.style.textDecoration = 'none';
+                } else {
+                    this.style.textDecoration = 'line-through';
+                }
+            })
 
-    }
+            $('#lista-de-tarefas').append(novaLinha);
+
+            $('#input-novo-item').val("")
+        }
+    })
 })
